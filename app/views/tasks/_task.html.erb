@@ -1,4 +1,7 @@
+<% if task.completed == false %>
 <li>
 <p> <%= task.title%></p>
 <p>&ndash; <%=task.body %></p>
+<%= button_to "Completed", task, method: :patch %>
 </li>
+<% end %>

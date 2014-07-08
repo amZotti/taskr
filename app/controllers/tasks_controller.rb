@@ -6,6 +6,13 @@ class TasksController < ApplicationController
     @tasks = current_user.tasks
   end
 
+  def update
+    @task = current_user.tasks.find(params[:id])
+    @task.completed = true
+    @task.save
+    redirect_to :tasks
+  end
+
   def create
     @task =  current_user.tasks.new(task_params)
     @tasks = current_user.tasks
