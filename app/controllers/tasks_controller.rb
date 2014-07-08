@@ -21,7 +21,9 @@ class TasksController < ApplicationController
     if @task.save
       render @task
     else
-      render "errors", target: @task
+      render partial: "errors",
+       locals: { target:  @task },
+       status: 422
     end
   end
   private
