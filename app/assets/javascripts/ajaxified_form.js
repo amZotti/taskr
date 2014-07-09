@@ -10,11 +10,12 @@ $(function() {
       var html = xhr.responseText;
       $("#errors").html(html)
     });
+
     return false;
   });
 
 
-  $(".completed_checkbox").click(function(event){
+  $(document).on("click",".completed_checkbox",function(event){
     var formElement = $(event.target).parents("form");
     $.ajax({
       url: formElement.prop("action"),
@@ -23,6 +24,10 @@ $(function() {
         formElement.fadeOut();
       });
   });
+//  $(document).on("click",".delete_button",function(event){
+//    console.log("delete clicked");
+//    return false;
+//  });
 });
 
 

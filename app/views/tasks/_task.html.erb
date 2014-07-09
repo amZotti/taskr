@@ -1,12 +1,10 @@
-
 <%= form_for task do |form| %>
   <li>
 <% if !task.completed %>
     <p> <%= task.title%></p>
     <p>&ndash; <%=task.body %></p>
      <%= form.check_box :completed, class: "completed_checkbox" %>
-  
+     <%= button_to "Delete post", class: "delete_button" %>
      </li>
    <% end %>
 <% end %>
-
