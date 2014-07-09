@@ -12,5 +12,17 @@ $(function() {
     });
     return false;
   });
+
+
+  $(".completed_checkbox").click(function(event){
+    var formElement = $(event.target).parents("form");
+    $.ajax({
+      url: formElement.prop("action"),
+      data: formElement.serialize(),
+      type: "PATCH"}).done(function(){
+        formElement.fadeOut();
+      });
+  });
 });
+
 

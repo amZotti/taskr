@@ -1,8 +1,12 @@
-<% if !task.completed %>
+
+<%= form_for task do |form| %>
   <li>
+<% if !task.completed %>
     <p> <%= task.title%></p>
     <p>&ndash; <%=task.body %></p>
-    <%= button_to "Completed", task, method: :patch %>
-  </li>
+     <%= form.check_box :completed, class: "completed_checkbox" %>
+  
+     </li>
+   <% end %>
 <% end %>
 
